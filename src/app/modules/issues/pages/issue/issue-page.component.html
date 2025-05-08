@@ -1,0 +1,16 @@
+<h1>Issue number: <small>{{ issueNumber() }}</small></h1>
+
+<a routerLink="/">Regresar</a>
+
+@if (issueQuery.data() === undefined) {
+  <p class="animate-pulse">Cargando issue</p>
+} @else {
+  <issue-comment [issue]="issueQuery.data()!"/>
+}
+
+<!-- comentarios-->
+ @for (comment of issueCommentsQuery.data(); track comment.id) {
+    <issue-comment [issue]="comment"/>
+} @empty {
+  <p class="m-2">No hay comentarios en esta issue.</p>
+}

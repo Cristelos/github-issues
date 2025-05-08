@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignora archivo con tokens secretos
+src/environments/environment.secret.ts

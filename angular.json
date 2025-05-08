@@ -16,9 +16,7 @@
             "outputPath": "dist/github-issues",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -50,7 +48,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -92,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "bfd53881-1752-4fec-9a48-20a047e1e60c"
   }
 }
