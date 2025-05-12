@@ -1,15 +1,19 @@
 <div
-  class="flex items-center px-2 py-3 mb-5 border rounded-md bg-sky-900 hover:bg-sky-950">
+  class="flex items-center px-2 py-3 mb-5 border rounded-md bg-sky-900 hover:bg-sky-950"
+  (mouseenter)="prefetchData()"
+>
   @if( isOpen ) {
-  <i class="fa-regular fa-folder-open text-green-500"></i>
+    <i class="fa-regular fa-folder-open text-green-500"></i>
 
   } @else {
-  <i class="fa-regular fa-folder-closed text-red-500"></i>
-
+    <i class="fa-regular fa-folder-closed text-red-500"></i>
   }
 
-  <div class="flex flex-col flex-grow px-2 ">
-    <a [routerLink]="['/issue', issue().number]" class="text-white hover:underline">
+  <div class="flex flex-col flex-grow px-2">
+    <a
+      [routerLink]="['/issue', issue().number]"
+      class="text-white hover:underline"
+    >
       {{ issue().title }}
     </a>
     <span class="text-gray-400">
