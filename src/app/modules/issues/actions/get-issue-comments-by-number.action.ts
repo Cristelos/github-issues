@@ -9,7 +9,7 @@ const GITHUB_TOKEN = secret.gitHubToken;
 export const getIssuCommentsByNumber = async (
   issueNumber: string
 ): Promise<GitHubIssue[]> => {
-  await sleep(1500);
+
 
   try {
     const resp = await fetch(`${BASE_URL}/issues/${issueNumber}/comments`, {
@@ -24,6 +24,6 @@ export const getIssuCommentsByNumber = async (
 
     return issueComment;
   } catch (error) {
-    throw "Can't load issue comment";
+    throw `Can't load issue comment ${issueNumber}`;
   }
 };

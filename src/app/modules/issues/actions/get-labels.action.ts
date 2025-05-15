@@ -7,7 +7,7 @@ const BASE_URL = environment.baseUrl;
 const GITHUB_TOKEN = secret.gitHubToken ;
 
 export const getLabels = async (): Promise<GitHubLabel[]> => {
-  await sleep(1500);
+
 
   try {
     const resp = await fetch(`${BASE_URL}/labels`, {
